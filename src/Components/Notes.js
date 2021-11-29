@@ -18,16 +18,15 @@ useEffect(() => {
             <ul class="collection with-header">
                 <li class="collection-header"><h4>Stuff to do</h4></li>
                 {todos && todos.map((todo) => {
-                    if(todo.title)
-                        return(
-                            <li class="collection-item" key={todo._id}>
-                                <div>{todo?.title}
-                                    <a href = "#!" class="secondary-content" onClick= {() => removeTodo(todo._id)}>
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </div>
-                            </li>
-                        )
+                    return(
+                        <li class="collection-item" key={todo._id}>
+                            <div>{todo?.title? todo.title: "Default"}
+                                <a href = "#!" class="secondary-content" onClick= {() => removeTodo(todo._id)}>
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </div>
+                        </li>
+                    )
                 })}
             </ul>
         </>
